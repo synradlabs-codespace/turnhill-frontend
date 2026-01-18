@@ -1,0 +1,84 @@
+{
+  "insights": [
+    {
+      "id": "1",
+      "slug": "structuring-businesses-for-scale",
+      "title": "Structuring Businesses for Scale",
+      "excerpt": "How founders can avoid early stage mistakes by choosing the right legal, tax, and governance structures.",
+      "content": "Scaling a business requires more than revenue growth. It requires systems that can support complexity, accountability, and long term decision making.\n\n## Why Structure Matters Early\n\nMany founders postpone formal structuring, assuming it can be corrected later. In practice, early decisions around entity structure, shareholding, and control create lasting consequences during growth.\n\n## Legal and Tax Foundations\n\nSelecting the right legal entity and tax framework impacts compliance obligations, fundraising readiness, and operational flexibility.\n\n## Governance for Growing Teams\n\nClear roles, defined authority, and basic governance discipline help leadership teams scale without internal friction.\n\n## Final Thoughts\n\nBusinesses that structure intentionally in the early stages raise capital more smoothly, operate with confidence, and avoid costly restructures later.",
+      "categories": [
+        "Strategy",
+        "Governance",
+        "Compliance"
+      ],
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2832&auto=format&fit=crop",
+      "author": "Turnhill Advisory",
+      "publishedAt": "2024-02-10T10:00:00Z",
+      "readTime": "6 min read"
+    },
+    {
+      "id": "2",
+      "slug": "compliance-as-growth-enabler",
+      "title": "Compliance as a Growth Enabler",
+      "excerpt": "Why disciplined compliance frameworks support faster and more sustainable business growth.",
+      "content": "Compliance is often viewed as an obligation rather than an advantage. Well run businesses approach it as a foundation for growth.\n\n## The Compliance Misconception\n\nFounders often believe compliance slows execution. In reality, weak compliance introduces uncertainty, delays fundraising, and damages credibility.\n\n## Confidence for Investors and Partners\n\nStrong compliance practices signal operational maturity. Investors, lenders, and enterprise clients prefer companies with predictable legal and financial hygiene.\n\n## Operational Discipline\n\nClear compliance systems reduce reactive firefighting and allow leadership teams to focus on strategic growth.\n\n## Conclusion\n\nWhen implemented thoughtfully, compliance becomes an invisible growth engine rather than a constraint.",
+      "categories": [
+        "Compliance",
+        "Operations",
+        "Risk"
+      ],
+      "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2832&auto=format&fit=crop",
+      "author": "Turnhill Advisory",
+      "publishedAt": "2024-02-15T12:30:00Z",
+      "readTime": "5 min read"
+    },
+    {
+      "id": "3",
+      "slug": "fundraising-and-due-diligence",
+      "title": "Preparing for Fundraising and Due Diligence",
+      "excerpt": "What investors evaluate beyond pitch decks and how founders can prepare well in advance.",
+      "content": "Successful fundraising is rarely decided during investor meetings. It is determined by preparation done months or years earlier.\n\n## Beyond the Pitch Deck\n\nInvestors assess governance quality, financial controls, compliance history, and founder alignment, not just presentation materials.\n\n## Due Diligence Readiness\n\nIncomplete documentation, unclear ownership structures, or unresolved compliance issues frequently delay or derail transactions.\n\n## Building an Investor Ready Organization\n\nRegular audits, clean records, and transparent reporting reduce friction and accelerate capital raising.\n\n## Key Takeaway\n\nFounders who treat due diligence as an ongoing discipline experience faster, smoother fundraising outcomes.",
+      "categories": [
+        "Fundraising",
+        "Governance",
+        "Finance"
+      ],
+      "image": "https://images.unsplash.com/photo-1523958203904-cdcb402031fd?q=80&w=2832&auto=format&fit=crop",
+      "author": "Turnhill Advisory",
+      "publishedAt": "2024-02-20T09:00:00Z",
+      "readTime": "7 min read"
+    },
+    {
+      "id": "4",
+      "slug": "governance-mistakes-growing-companies",
+      "title": "Governance Mistakes Growing Companies Make",
+      "excerpt": "Common governance gaps that create risk and slow decision making as companies scale.",
+      "content": "Governance failures rarely appear overnight. They emerge gradually as organizations grow without structure.\n\n## Informal Decision Making\n\nEarly stage informality often persists too long, leading to unclear accountability and inconsistent outcomes.\n\n## Lack of Oversight\n\nAbsence of basic board processes or independent review increases operational and financial risk.\n\n## Founder Dependence\n\nOver centralization of authority limits scalability and exposes the business to continuity risk.\n\n## Closing Perspective\n\nStrong governance does not reduce agility. It enables consistent, confident decision making at scale.",
+      "categories": [
+        "Governance",
+        "Risk",
+        "Leadership"
+      ],
+      "image": "https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "author": "Turnhill Advisory",
+      "publishedAt": "2024-02-25T11:45:00Z",
+      "readTime": "6 min read"
+    },
+    {
+      "id": "5",
+      "slug": "financial-discipline-for-growth",
+      "title": "Financial Discipline as a Growth Advantage",
+      "excerpt": "Why strong financial controls improve resilience, valuation, and investor confidence.",
+      "content": "Financial discipline is not about restricting growth. It is about enabling sustainable expansion.\n\n## Visibility and Control\n\nReliable financial reporting allows leadership teams to make informed decisions under pressure.\n\n## Investor Expectations\n\nClean books and predictable cash management significantly improve credibility during capital raises.\n\n## Risk Management\n\nEarly investment in financial controls reduces exposure to liquidity shocks and compliance failures.\n\n## Final Insight\n\nBusinesses with strong financial foundations grow with greater confidence and fewer surprises.",
+      "categories": [
+        "Finance",
+        "Operations",
+        "Risk"
+      ],
+      "image": "https://images.unsplash.com/photo-1629339941379-da30348cdba6?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "author": "Turnhill Advisory",
+      "publishedAt": "2024-03-01T16:20:00Z",
+      "readTime": "5 min read"
+    }
+  ]
+}

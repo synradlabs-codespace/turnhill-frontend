@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 const services = [
   {
@@ -113,13 +114,12 @@ const services = [
 ]
 
 export function SiteHeader() {
-  const [expanded, setExpanded] = useState(false)
-  const pathname = usePathname()
+  const [expanded, setExpanded] = useState(false);
+  const pathname = usePathname();
 
-  // Close header automatically on route change
   useEffect(() => {
-    setExpanded(false)
-  }, [pathname])
+    setExpanded(false);
+  }, [pathname]);
 
   return (
     <header
@@ -132,12 +132,20 @@ export function SiteHeader() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-semibold"
+          className="flex items-center"
           aria-label="Turnhill International Home"
         >
-          <span className="whitespace-nowrap text-lg font-bold">
-            Turnhill International
-          </span>
+          {/* Visually hidden text for accessibility */}
+          <span className="sr-only">Turnhill International</span>
+
+          <Image
+            src="/turnhill-full-logo.png"
+            alt="Turnhill International"
+            width={420}
+            height={120}
+            priority
+            className="h-8 sm:h-9 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -179,6 +187,7 @@ export function SiteHeader() {
                   >
                     {category.category}
                   </Link>
+
                   <ul className="space-y-1 ml-2 text-xs">
                     {category.items.map((item) => (
                       <li key={item}>
@@ -198,5 +207,5 @@ export function SiteHeader() {
         )}
       </AnimatePresence>
     </header>
-  )
+  );
 }

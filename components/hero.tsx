@@ -21,19 +21,16 @@ export function Hero() {
             businesses grow with discipline and confidence.
           </p>
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <Button asChild className="rounded-full bg-[#70AD47]">
+            <Button asChild className="rounded-full bg-[#6BAE3A]">
               <Link href="/contact">Let’s Talk</Link>
             </Button>
             <Button
               variant="outline"
               className="rounded-full bg-transparent"
-              onClick={() => {
-                document
-                  .getElementById("insights")
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
+
             >
-              View Client Work
+              <Link href="/testimonials">View Testimonials</Link>
+
             </Button>
           </div>
         </div>
@@ -42,11 +39,12 @@ export function Hero() {
           {/* Stat card */}
           <Card className="col-span-1 rounded-2xl bg-gray-100">
             <CardContent className="p-5">
-              <div className="text-5xl font-semibold flex items-center">
+              <div className="text-3xl sm:text-4xl md:text-5xl font-semibold flex items-center">
                 <NumberTicker value={2000} />+
               </div>
+
               <p className="mt-2 text-xs text-muted-foreground">
-                Businesses advised across compliance, finance, and strategy
+                Clients advised across compliance, finance, and strategy
               </p>
             </CardContent>
           </Card>
@@ -74,8 +72,8 @@ export function Hero() {
             />
           </div>
 
-          {/* Stat card */}
-          <Card className="col-span-1 rounded-2xl bg-black text-white">
+          {/* Green stat card */}
+          <Card className="col-span-1 rounded-2xl bg-[#6BAE3A] text-white">
             <CardContent className="p-5">
               <div className="text-4xl font-semibold flex items-center">
                 <NumberTicker value={94} />%

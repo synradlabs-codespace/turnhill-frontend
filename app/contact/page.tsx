@@ -24,23 +24,12 @@ export default function ContactPage() {
         <div className="grid gap-8 md:gap-10 md:grid-cols-[1.1fr,1fr]">
           {/* Left: context & contact info */}
           <div className="flex flex-col gap-6">
-<div className="rounded-lg border bg-card p-6">
-  <h2 className="text-xl font-medium mb-2">What to expect</h2>
-  <ul className="text-sm text-muted-foreground list-disc pl-5 space-y-1">
-    <li>Comprehensive consultation to understand your business, vision, and strategic objectives</li>
-    <li>Guidance on company structuring, compliance, governance, and financial planning</li>
-    <li>Actionable next steps to simplify execution, mitigate risks, and accelerate growth</li>
-  </ul>
-</div>
-
-
-
             <div className="rounded-lg border bg-card p-6">
               <h3 className="text-base font-medium mb-2">Prefer email?</h3>
               <p className="text-sm text-muted-foreground">
                 Reach us directly at{" "}
                 <a className="underline underline-offset-2" href="mailto:hello@turnhill.com">
-                  relations@turnhill.com
+                  relations@turnhill.in
                 </a>{" "}
                 and we’ll follow up promptly.
               </p>

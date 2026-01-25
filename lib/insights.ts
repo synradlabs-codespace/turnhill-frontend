@@ -1,50 +1,49 @@
-import insightsData from "@/data/insights.json";
+import "server-only"
+
+import fs from "node:fs"
+import path from "node:path"
+import matter from "gray-matter"
 
 export type Insight = {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  categories: string[];
-  image: string;
-  author: string;
-  publishedAt: string;
-  readTime: string;
-};
+  id: string
+  slug: string
+  title: string
+  excerpt: string
+  content: string // raw markdown
+  categories: string[]
+  image?: string
+  author: string
+  publishedAt: string
+  readTime: string
+}
 
+const insightsDir = path.join(process.cwd(), "data/insights")
+
+// Get all insights
 export function getAllInsights(): Insight[] {
-  return insightsData.insights;
+  const files = fs.readdirSync(insightsDir)
+
+  return files.map((file) => {
+    const raw = fs.readFileSync(path.join(insightsDir, file), "utf-8")
+    const { data, content } = matter(raw)
+
+    return {
+      ...(data as Insight),
+      content, // raw markdown
+    }
+  })
 }
 
-export function getInsightBySlug(slug: string): Insight | null {
-  return insightsData.insights.find(
-    (insight) => insight.slug === slug
-  ) || null;
-}
+// Get a single insight by slug
+export async function getInsightBySlug(slug: string): Promise<Insight | null> {
+  const filePath = path.join(insightsDir, `${slug}.md`)
+  if (!fs.existsSync(filePath)) return null
 
-export function getInsightById(id: string): Insight | null {
-  return insightsData.insights.find(
-    (insight) => insight.id === id
-  ) || null;
-}
+  const raw = fs.readFileSync(filePath, "utf-8")
+  const { data, content } = matter(raw)
 
-export function getAllInsightCategories(): string[] {
-  const categories = new Set<string>();
-
-  insightsData.insights.forEach((insight) => {
-    insight.categories.forEach((category) =>
-      categories.add(category)
-    );
-  });
-
-  return Array.from(categories).sort();
-}
-
-export function getInsightsByCategory(category: string): Insight[] {
-  return insightsData.insights.filter((insight) =>
-    insight.categories.some(
-      (cat) => cat.toLowerCase() === category.toLowerCase()
-    )
-  );
+  return {
+    ...(data as Insight),
+    content, // raw markdown
+  }
 }

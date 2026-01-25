@@ -60,7 +60,7 @@ export function Services() {
         <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
           Turnhill simplifies complex legal, financial, and strategic challenges
           for startups, SMEs, and growing enterprises. We take ownership of
-          structuring, compliance, governance, and execution—so founders can
+          structuring, compliance, governance, and execution so founders can
           focus on building and scaling with confidence.
         </p>
       </div>

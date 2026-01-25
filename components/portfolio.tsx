@@ -1,11 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { getAllInsights } from "@/lib/insights";
 
 export function Portfolio() {
   const insights = getAllInsights().slice(0, 3);
+  console.log(getAllInsights().map(i => i.slug))
+
 
   return (
     <section
@@ -15,7 +15,7 @@ export function Portfolio() {
       <div className="grid gap-8 md:grid-cols-3 md:gap-12">
         {/* Left intro */}
         <div className="md:col-span-1">
-          <h2 className="text-pretty text-2xl sm:text-3xl font-semibold tracking-tight">
+          <h2 className="text-pretty text-2xl sm:text-3xl font-semibold tracking-tight text-left">
             Insights from Real Business Scenarios
           </h2>
           <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
@@ -60,7 +60,7 @@ export function Portfolio() {
                 <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
                   {item.excerpt}
                 </p>
-                <span className="mt-3 text-xs font-medium text-[#70AD47]">
+                <span className="mt-3 text-xs font-medium text-[#6BAE3A]">
                   Read Insight →
                 </span>
               </div>

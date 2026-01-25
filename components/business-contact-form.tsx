@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useToast } from "@/hooks/use-toast"
+import { MessageCircle } from "lucide-react"
+
 
 type ContactPayload = {
   fullName: string
@@ -182,17 +184,40 @@ export function BusinessContactForm({
           <div className="flex items-start gap-3">
             <input id="consent" name="consent" type="checkbox" className="mt-1 h-4 w-4 rounded border-gray-300" />
             <Label htmlFor="consent" className="text-sm text-muted-foreground">
-              I agree to be contacted regarding my inquiry. Turnhill will never share your information.
+              I consent to being contacted regarding my inquiry. Turnhill will not share my information with third parties.
             </Label>
           </div>
         </CardContent>
 
-        <CardFooter className="flex items-center justify-between">
-          <p className="text-xs text-muted-foreground">Response time: within 1–2 business days</p>
-          <Button type="submit" disabled={loading} className="min-w-28 bg-[#70AD47] text-white hover:bg-black">
-            {loading ? "Sending..." : buttonText}
-          </Button>
+        <CardFooter className="flex flex-col gap-2">
+          <div className="flex w-full items-center justify-between">
+            <p className="text-xs text-muted-foreground">
+              Response time: within 1–2 business days
+            </p>
+
+            <Button
+              type="submit"
+              disabled={loading}
+              className="min-w-28 bg-[#70AD47] text-white hover:bg-black"
+            >
+              {loading ? "Sending..." : buttonText}
+            </Button>
+          </div>
+
+          <p className="pt-10 text-xs text-muted-foreground text-right">
+            Prefer WhatsApp?{" "}
+            <a
+              href="https://wa.me/917370000088"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-600 hover:underline underline-offset-4"
+            >
+              Contact us here
+              <MessageCircle className="inline-block ml-1 mb-0.5 h-4 w-4" />
+            </a>
+          </p>
         </CardFooter>
+
       </form>
     </Card>
   )

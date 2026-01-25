@@ -41,7 +41,7 @@ export function Features() {
       <div className="grid gap-6 sm:grid-cols-2">
         {items.map((f) => (
           <div key={f.title} className="rounded-xl border bg-background p-5 flex flex-col items-start text-start">
-            <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-[#70AD47]">
+            <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-[#6BAE3A] text-white">
               <f.icon className="h-4 w-4" />
             </span>
             <h3 className="text-sm font-medium">{f.title}</h3>

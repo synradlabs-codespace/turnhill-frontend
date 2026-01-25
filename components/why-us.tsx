@@ -40,7 +40,7 @@ export function WhyUs() {
                     <div className="mt-6">
                         <Link
                             href="/contact"
-                            className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm hover:bg-black bg-[#70AD47] text-white"
+                            className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm hover:bg-black bg-[#6BAE3A] text-white"
                             aria-label="Get in touch"
                         >
                             Get in Touch Now

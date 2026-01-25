@@ -30,7 +30,7 @@ export function Showcase() {
           <div className="mt-5">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm hover:bg-black transition bg-[#70AD47] text-white"
+              className="inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm hover:bg-black transition bg-[#6BAE3A] text-white"
             >
               Speak to an Advisor <span aria-hidden>→</span>
             </Link>

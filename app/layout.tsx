@@ -35,7 +35,6 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -51,7 +50,10 @@ export default function RootLayout({
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
       >
-        {children}
+        <main className="site-content">
+          {children}
+        </main>
+
         <Analytics />
       </body>
     </html>

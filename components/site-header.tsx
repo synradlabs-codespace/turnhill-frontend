@@ -1,17 +1,135 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { useState } from "react";
-import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Link from "next/link"
+import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
+import { motion, AnimatePresence } from "framer-motion"
+
+const services = [
+  {
+    category: "START YOUR BUSINESS",
+    href: "/services/start-your-business",
+    items: [
+      "Private Limited Company",
+      "One Person Company",
+      "LLP",
+      "Partnership",
+      "Public Limited Company",
+      "NGO / Section 8 Company",
+      "Proprietorship",
+    ],
+  },
+  {
+    category: "PROTECT YOUR BUSINESS",
+    href: "/services/protect-your-business",
+    items: [
+      "Trademark Registration",
+      "Reply Queries",
+      "Renew Your Trademark",
+      "Name Availability",
+      "Contracts & Agreements",
+      "Project Feasibility",
+    ],
+  },
+  {
+    category: "MANAGE YOUR BUSINESS",
+    href: "/services/manage-your-business",
+    items: [
+      "Pvt Ltd ROC Compliances",
+      "Public Ltd Compliance",
+      "LLP - ROC Compliances",
+      "GST Compliances",
+      "Tds Compliances",
+      "Books Finalisation",
+      "Income Tax Returns",
+      "Closure of Company",
+    ],
+  },
+  {
+    category: "REGISTRATIONS & LICENSES",
+    href: "/services/registrations-licenses",
+    items: [
+      "GST Registration",
+      "Udyam Registration",
+      "Startup India - DPIIT",
+      "FSSAI Registration",
+      "Shop & Establishment",
+      "ISO Certification",
+      "Import Export Code",
+      "TAN",
+    ],
+  },
+  {
+    category: "FINANCIAL MANAGEMENT",
+    href: "/services/financial-management",
+    items: [
+      "Bookkeeping",
+      "Supervision - Accounts",
+      "Financial Dashboards",
+      "Cash Flow Analysis",
+      "Working Capital Analysis",
+      "Cost Control Advisory",
+      "Tax Planning",
+      "Audit Support",
+    ],
+  },
+  {
+    category: "BUSINESS GROWTH",
+    href: "/services/business-growth",
+    items: [
+      "Business Structuring",
+      "Financial Modelling",
+      "Due Diligence & Fund-Raising / Loans",
+      "Valuation",
+      "Virtual CFO Services",
+      "International Expansion",
+    ],
+  },
+  {
+    category: "FRANCHISE ADVISORY",
+    href: "/services/franchise-advisory",
+    items: [
+      "Franchise Modelling",
+      "Investor Agreements",
+      "Compliances",
+      "Tax Structuring",
+      "Investor Relations",
+      "IP Protection",
+      "Master Franchising",
+    ],
+  },
+  {
+    category: "INTERNATIONAL BUSINESS",
+    href: "/services/international-business",
+    items: [
+      "Company Incorporation",
+      "Bookkeeping",
+      "Accounting Support",
+      "Compliance & Filings",
+      "Tax & Advisory Support",
+      "International Business Management",
+    ],
+  },
+]
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false)
+  const pathname = usePathname()
+
+  // Close header automatically on route change
+  useEffect(() => {
+    setExpanded(false)
+  }, [pathname])
 
   return (
-    <header className="border-b bg-background/70 sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">
+    <header
+      className="border-b bg-background/70 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      onMouseEnter={() => setExpanded(true)}
+      onMouseLeave={() => setExpanded(false)}
+    >
+      {/* Top nav */}
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 h-14 relative">
+        {/* Logo */}
         <Link
           href="/"
           className="flex items-center gap-2 font-semibold"
@@ -23,66 +141,62 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav
-          aria-label="Primary"
-          className="hidden md:flex items-center gap-6 text-sm text-muted-foreground"
-        >
-          <Link href="/#home" className="hover:text-foreground">
+        <nav className="hidden md:flex items-center gap-6 text-sm text-foreground">
+          <Link href="/#home" className="hover:text-[#6BAE3A]">
             Home
           </Link>
-          <Link href="/#whyus" className="hover:text-foreground">
+          <Link href="/#whyus" className="hover:text-[#6BAE3A]">
             Why Turnhill
           </Link>
-          <Link href="/#services" className="hover:text-foreground">
+          <Link href="/#services" className="hover:text-[#6BAE3A]">
             Services
           </Link>
-
-          <Link href="/insights" className="hover:text-foreground">
+          <Link href="/insights" className="hover:text-[#6BAE3A]">
             Insights
           </Link>
-          <Link href="/contact" className="hover:text-foreground">
+          <Link href="/contact" className="hover:text-[#6BAE3A]">
             Contact
           </Link>
         </nav>
-
-        {/* Mobile Nav */}
-        <div className="md:hidden">
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                className="rounded-full bg-transparent"
-                aria-label="Open navigation menu"
-              >
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left" className="w-full sm:max-w-xs mx-auto">
-              <nav
-                aria-label="Mobile Primary"
-                className="mt-6 grid gap-4 text-base px-4"
-              >
-                <Link href="/#home" onClick={() => setOpen(false)}>
-                  Home
-                </Link>
-                <Link href="/#whyus" onClick={() => setOpen(false)}>
-                  Why Turnhill
-                </Link>
-                <Link href="/#services" onClick={() => setOpen(false)}>
-                  Services
-                </Link>
-                <Link href="/insights" onClick={() => setOpen(false)}>
-                  Insights
-                </Link>
-                <Link href="/contact" onClick={() => setOpen(false)}>
-                  Contact
-                </Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
-        </div>
       </div>
+
+      {/* Expanded Mega Header */}
+      <AnimatePresence>
+        {expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="bg-white border-t border-gray-200 shadow-lg overflow-y-auto max-h-[50vh] text-sm"
+          >
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 py-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {services.map((category) => (
+                <div key={category.category}>
+                  <Link
+                    href={category.href}
+                    className="block font-semibold uppercase border-b-2 border-[#6BAE3A]/50 pb-1 mb-2 text-sm hover:text-[#6BAE3A]"
+                  >
+                    {category.category}
+                  </Link>
+                  <ul className="space-y-1 ml-2 text-xs">
+                    {category.items.map((item) => (
+                      <li key={item}>
+                        <Link
+                          href={category.href}
+                          className="text-muted-foreground hover:text-[#6BAE3A] block"
+                        >
+                          • {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
-  );
+  )
 }

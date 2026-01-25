@@ -38,6 +38,7 @@ solutions that go beyond documentation. Our work spans startups, SMEs, and growt
 across diverse industries, helping them navigate critical decisions with clarity and confidence.
 
 - START YOUR BUSINESS
+
 Private Limited Company
 One Person Company
 LLP
@@ -48,6 +49,7 @@ Company
 Proprietorship
 
 - PROTECT YOUR BUSINESS
+
 Trademark Registration
 Reply Queries
 Renew Your Trademark

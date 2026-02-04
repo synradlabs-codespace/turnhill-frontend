@@ -11,14 +11,14 @@ export function SiteFooter() {
           {/* Left: Company + Address + Description */}
           <div className="flex flex-col gap-2 text-xs text-muted-foreground max-w-sm">
             <span className="font-medium text-foreground">
-              Turnhill International LLP™
+              Turnhill International LLP
             </span>
             <span>DSS-122, MCC-1, Aerocity, Mohali</span>
             <p>
               A group backed by Chartered Accountants, Lawyers, Company Secretaries, Corporate Leaders and experienced consultants who get you exactly what you need.
             </p>
             <Link
-              href="/privacy"
+              href="/legal-and-privacy"
               className="text-foreground hover:underline underline-offset-2"
             >
               Legal and Privacy

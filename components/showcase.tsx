@@ -9,7 +9,7 @@ export function Showcase() {
       <div className="grid items-center gap-8 md:grid-cols-2 md:gap-12">
         {/* Content */}
         <div>
-          <h2 className="text-pretty text-2xl sm:text-3xl font-semibold tracking-tight">
+          <h2 className="text-pretty text-2xl sm:text-3xl font-semibold tracking-tight text-left">
             Strategic Clarity for Confident Decisions
           </h2>
 

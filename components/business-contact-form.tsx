@@ -106,7 +106,7 @@ export function BusinessContactForm({
   return (
     <Card className="border border-gray-200">
       <CardHeader>
-        <CardTitle className="text-xl md:text-2xl">{title}</CardTitle>
+        <CardTitle className="text-xl md:text-2xl text-left">{title}</CardTitle>
         {description && <p className="mt-2 text-sm text-muted-foreground">{description}</p>}
       </CardHeader>
 
@@ -198,7 +198,7 @@ export function BusinessContactForm({
             <Button
               type="submit"
               disabled={loading}
-              className="min-w-28 bg-[#70AD47] text-white hover:bg-black"
+              className="min-w-28 bg-[#70AD47] text-white hover:bg-black hover:cursor-pointer"
             >
               {loading ? "Sending..." : buttonText}
             </Button>

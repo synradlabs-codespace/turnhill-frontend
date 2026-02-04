@@ -9,7 +9,7 @@ export type Insight = {
   slug: string
   title: string
   excerpt: string
-  content: string // raw markdown
+  content: string
   categories: string[]
   image?: string
   author: string
@@ -29,7 +29,7 @@ export function getAllInsights(): Insight[] {
 
     return {
       ...(data as Insight),
-      content, // raw markdown
+      content,
     }
   })
 }
@@ -44,6 +44,6 @@ export async function getInsightBySlug(slug: string): Promise<Insight | null> {
 
   return {
     ...(data as Insight),
-    content, // raw markdown
+    content,
   }
 }

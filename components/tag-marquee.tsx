@@ -29,7 +29,7 @@ export function TagMarquee() {
           {[...tags, ...tags].map((t, i) => (
             <span
               key={i}
-              className="mx-2 rounded-full bg-background px-3 py-1 text-xs border whitespace-nowrap"
+              className="mx-2 rounded-full bg-[#6BAE3A]/10 border-[#6BAE3A] text-[#6BAE3A] px-3 py-1 text-xs border whitespace-nowrap"
             >
               {t}
             </span>

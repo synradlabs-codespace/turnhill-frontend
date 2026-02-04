@@ -11,7 +11,7 @@ export function Hero() {
     <section id="home" className="py-10 sm:py-16">
       <div className="grid items-center gap-10 md:grid-cols-2">
         <div>
-          <h1 className="text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+          <h1 className="text-balance text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-left">
             Advisory for Sustainable Business Growth
           </h1>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-prose">

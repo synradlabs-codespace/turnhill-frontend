@@ -13,7 +13,7 @@ export default function ContactPage() {
       <section className="mx-auto max-w-5xl">
         <header className="mb-10 md:mb-14">
           <p className="text-sm text-muted-foreground">Contact</p>
-          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-balance mt-2">
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-balance mt-2 text-left">
             Let’s Build Something Great
           </h1>
           <p className="mt-3 text-base text-muted-foreground max-w-2xl">

@@ -12,7 +12,7 @@ export function CTA() {
         <div className="mt-6 flex justify-center">
           <a
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-[#6BAE3A] px-4 py-2 text-sm text-white"
+            className="inline-flex items-center gap-2 rounded-full bg-[#6BAE3A] px-4 py-2 text-sm text-white hover:bg-[#6BAE3A]/50 transition"
           >
             Start Your Consultation <span aria-hidden>→</span>
           </a>

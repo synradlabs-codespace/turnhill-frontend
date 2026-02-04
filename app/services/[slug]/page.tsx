@@ -44,7 +44,6 @@ const SERVICES: Record<string, ServiceDetail> = {
       { title: "Partnership", desc: "Drafting and registration of partnership firms." },
       { title: "Public Limited Company", desc: "Incorporation of a public limited business." },
       { title: "NGO / Section 8 Company", desc: "Setup of non profit and charitable organizations." },
-      { title: "Company", desc: "General company incorporation services." },
       { title: "Proprietorship", desc: "Registration of sole proprietorship businesses." },
     ],
 

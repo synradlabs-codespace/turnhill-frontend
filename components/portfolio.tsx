@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllInsights } from "@/lib/insights";
+import { getAllSanityInsights } from "@/lib/sanity.insights";
 
-export function Portfolio() {
-  const insights = getAllInsights().slice(0, 3);
-  console.log(getAllInsights().map(i => i.slug))
-
+export async function Portfolio() {
+  const allInsights = await getAllSanityInsights();
+  const insights = allInsights.slice(0, 3);
 
   return (
     <section
@@ -37,35 +36,43 @@ export function Portfolio() {
 
         {/* Insight cards */}
         <div className="md:col-span-2 grid gap-6">
-          {insights.map((item) => (
-            <Link
-              key={item.id}
-              href={`/insights/${item.slug}`}
-              className="group grid gap-4 rounded-2xl border p-4 sm:grid-cols-[220px_1fr] hover:bg-muted/30 transition"
-            >
-              <div className="relative h-40 w-full overflow-hidden rounded-xl bg-muted">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform"
-                  sizes="(min-width: 640px) 220px, 100vw"
-                />
-              </div>
+          {insights.length === 0 ? (
+            <p className="text-sm text-muted-foreground">
+              No insights available yet. Configure Sanity to add content.
+            </p>
+          ) : (
+            insights.map((item) => (
+              <Link
+                key={item._id}
+                href={`/insights/${item.slug}`}
+                className="group grid gap-4 rounded-2xl border p-4 sm:grid-cols-[220px_1fr] hover:bg-muted/30 transition"
+              >
+                <div className="relative h-40 w-full overflow-hidden rounded-xl bg-muted">
+                  {item.image && (
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform"
+                      sizes="(min-width: 640px) 220px, 100vw"
+                    />
+                  )}
+                </div>
 
-              <div className="flex flex-col justify-center">
-                <h3 className="text-sm font-medium leading-snug">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                  {item.excerpt}
-                </p>
-                <span className="mt-3 text-xs font-medium text-[#6BAE3A]">
-                  Read Insight →
-                </span>
-              </div>
-            </Link>
-          ))}
+                <div className="flex flex-col justify-center">
+                  <h3 className="text-sm font-medium leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                    {item.excerpt}
+                  </p>
+                  <span className="mt-3 text-xs font-medium text-[#6BAE3A]">
+                    Read Insight →
+                  </span>
+                </div>
+              </Link>
+            ))
+          )}
         </div>
       </div>
     </section>

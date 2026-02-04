@@ -1,5 +1,8 @@
-import { getAllInsights, type Insight } from "@/lib/insights";
+import { getAllSanityInsights, type SanityInsight } from "@/lib/sanity.insights";
 import Link from "next/link";
+
+// Revalidate every 60 seconds
+export const revalidate = 60;
 
 const PER_PAGE = 6;
 
@@ -17,9 +20,8 @@ function getPageParam(
   return Number.isFinite(n) && n > 0 ? n : 1;
 }
 
-
 /* ---------- Insight Card ---------- */
-function InsightCard({ insight }: { insight: Insight }) {
+function InsightCard({ insight }: { insight: SanityInsight }) {
   return (
     <article className="group overflow-hidden rounded-xl border border-neutral-200 bg-white">
       <div className="aspect-[16/9] w-full overflow-hidden">
@@ -81,13 +83,14 @@ function Pagination({
 }
 
 /* ---------- Page ---------- */
-export default function InsightsPage({
+export default async function InsightsPage({
   searchParams,
 }: {
-  searchParams?: Record<string, string | string[] | undefined>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const allInsights = getAllInsights();
-  const page = getPageParam(searchParams ?? {});
+  const allInsights = await getAllSanityInsights();
+  const resolvedParams = await searchParams;
+  const page = getPageParam(resolvedParams ?? {});
   const totalPages = Math.max(
     1,
     Math.ceil(allInsights.length / PER_PAGE)
@@ -117,7 +120,7 @@ export default function InsightsPage({
       <section className="py-6 md:py-8">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {current.map((insight) => (
-            <InsightCard key={insight.id} insight={insight} />
+            <InsightCard key={insight._id} insight={insight} />
           ))}
         </div>
 

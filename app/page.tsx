@@ -12,11 +12,11 @@ import { PassionateTeamSection } from "@/components/passionate-team-section";
 
 export default function Page() {
   return (
-    <main className="min-h-screen">
+    <main className="w-full">
       <SiteHeader />
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <Hero />
-      </div>
+
+      <Hero />
+
 
       <TagMarquee />
 

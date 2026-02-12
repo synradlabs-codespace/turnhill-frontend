@@ -149,6 +149,8 @@
   animation: scroll 30s linear infinite;
 }
 
+/* Zoom in styling */
+
 @layer base {
   html {
     font-size: 100%;
@@ -172,4 +174,11 @@
       font-size: 240%;
     }
   }
+}
+
+/* Hide horizontal scrollbar */
+
+html,
+body {
+  overflow-x: hidden;
 }

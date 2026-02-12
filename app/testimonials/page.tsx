@@ -5,27 +5,71 @@ import { NumberTicker } from "@/components/number-ticker";
 import { BusinessContactForm } from "@/components/business-contact-form";
 import { Button } from "@/components/ui/button";
 
-// Example static testimonials
+
 const testimonials = [
     {
-        name: "Rohan Mehta",
-        role: "Founder, Chai Churi",
+        name: "Rushil Sehgal",
+        role: "Director, Synrad Labs Pvt Ltd",
         quote:
-            "Turnhill helped us structure our compliance and finance processes from day one. Their guidance made fundraising and scaling much smoother.",
+            "We had a great experience working with this consulting service during the early stages of our startup. They guided us through the legal setup with clarity and efficiency, making what could have been a complicated process feel manageable and well-structured. Their team was responsive, knowledgeable, and genuinely invested in helping us build a solid foundation. We highly recommend them to any startup looking for reliable legal consulting support.",
     },
     {
-        name: "Priya Sharma",
-        role: "CEO, Bun & Caffeine",
+        name: "Yatin Goyal",
+        role: "",
         quote:
-            "Professional, detail-oriented, and always ahead of the curve. Turnhill's insights are invaluable for our strategic decisions.",
+            "Very good consultant company. They guided me properly regarding banking and business matters. Also helped with my firm’s documents, gave good advice, and prepared everything professionally.",
     },
     {
-        name: "Amit Verma",
-        role: "Managing Director, Velvet Vista",
+        name: "Anchal Thakur",
+        role: "",
         quote:
-            "Their team helped us navigate complex legal frameworks effortlessly. Highly recommend for any growing business.",
+            "One of the best consultancy experiences I’ve had. They guided me step by step and ensured smooth completion of work I am happy with their services and would recommend them to others.",
+    },
+    {
+        name: "Chetan Bhardwaj",
+        role: "",
+        quote:
+            "Best consultancy firm I've worked with! 😊 They helped me land my dream job with their expert guidance and support. Highly recommend! 👍",
+    },
+
+    {
+        name: "Rajni Goyal",
+        role: "",
+        quote:
+            "Excellent business consultancy with clear and practical guidance. They helped us maintain proper books, stock records, and accurate reporting. Professional, reliable, and very helpful for smooth business management.",
+    },
+    {
+        name: "Dhruv Chauhan",
+        role: "",
+        quote:
+            "My experience so far has been excellent. The team has guided me through every step of the company registration process with clarity and professionalism. Everything was handled smoothly, neatly, and without confusion. I truly appreciate how supportive they have been throughout the entire process. Highly recommended, especially for those looking to register a company in Delhi!",
+    },
+    {
+        name: "Manpreet Singh",
+        role: "",
+        quote:
+            "I had a great Experience with them. I truly appreciate their dedication and would higly recommend consultancy to anyone looking for reliable service and good work.",
+    },
+    // {
+    //     name: "Sushmita Bhardwaj",
+    //     role: "",
+    //     quote:
+    //         "Best business experts in town. Starting my business was such an ease with their guidance. Highly recommended",
+    // },
+    {
+        name: "Shipu Verma",
+        role: "",
+        quote:
+            "Very cooperative staff, quick response, and proper guidance. Completely satisfied with their work.",
+    },
+    {
+        name: "Harman Sandhu",
+        role: "",
+        quote:
+            "Experts in startup expansion. Truly the best guides in Aerocity, Mohali. Highly recommended for anyone looking to scale their business😇😇",
     },
 ];
+
 
 export default function TestimonialsPage() {
     return (
@@ -93,6 +137,39 @@ export default function TestimonialsPage() {
                         </CardContent>
                     </Card>
                 </div>
+
+                {/* Contact form */}
+                <div className="grid gap-8 md:gap-10 md:grid-cols-[1.1fr,1fr]">
+                    {/* Left: context & contact info */}
+                    <div className="flex flex-col gap-6">
+                        <div className="rounded-lg border bg-card p-6">
+                            <h3 className="text-base font-medium mb-2">Prefer email?</h3>
+                            <p className="text-sm text-muted-foreground">
+                                Reach us directly at{" "}
+                                <a className="underline underline-offset-2" href="mailto:relations@turnhill.in">
+                                    relations@turnhill.in
+                                </a>{" "}
+                                and we’ll follow up promptly.
+                            </p>
+                            <div className="mt-4">
+                                <Button asChild variant="outline">
+                                    <a href="/">Back to home</a>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Right: form */}
+                    <BusinessContactForm
+                        title="Start Your Project Conversation"
+                        description="Fill out the form below and our Turnhill experts will get in touch to discuss your business needs."
+                        namePlaceholder="Your full name"
+                        emailPlaceholder="Your email address"
+                        companyPlaceholder="Your company or team"
+                        projectPlaceholder="Briefly describe your project or challenge"
+                        buttonText="Send Inquiry"
+                    />
+                </div>
             </section>
         </main>
     );
@@ -100,35 +177,3 @@ export default function TestimonialsPage() {
 
 
 
-{/* Contact form */ }
-<div className="grid gap-8 md:gap-10 md:grid-cols-[1.1fr,1fr]">
-    {/* Left: context & contact info */}
-    <div className="flex flex-col gap-6">
-        <div className="rounded-lg border bg-card p-6">
-            <h3 className="text-base font-medium mb-2">Prefer email?</h3>
-            <p className="text-sm text-muted-foreground">
-                Reach us directly at{" "}
-                <a className="underline underline-offset-2" href="mailto:relations@turnhill.in">
-                    relations@turnhill.in
-                </a>{" "}
-                and we’ll follow up promptly.
-            </p>
-            <div className="mt-4">
-                <Button asChild variant="outline">
-                    <a href="/">Back to home</a>
-                </Button>
-            </div>
-        </div>
-    </div>
-
-    {/* Right: form */}
-    <BusinessContactForm
-        title="Start Your Project Conversation"
-        description="Fill out the form below and our Turnhill experts will get in touch to discuss your business needs."
-        namePlaceholder="Your full name"
-        emailPlaceholder="Your email address"
-        companyPlaceholder="Your company or team"
-        projectPlaceholder="Briefly describe your project or challenge"
-        buttonText="Send Inquiry"
-    />
-</div>

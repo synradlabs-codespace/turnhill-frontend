@@ -37,7 +37,7 @@ function InsightCard({ insight }: { insight: SanityInsight }) {
           {insight.categories.join(", ")}
         </div>
 
-        <h3 className="text-balance text-lg font-semibold text-neutral-900 md:text-xl">
+        <h3 className="text-balance text-left text-lg font-semibold text-neutral-900 md:text-xl">
           <Link
             href={`/insights/${insight.slug}`}
             className="hover:underline"

@@ -74,15 +74,15 @@ export function SiteHeader() {
             src="/turnhill-full-logo.svg"
             alt="Turnhill International"
             width={420}
-            height={120}
+            height={150}
             priority
-            className="h-12 sm:h-14 md:h-16 w-auto object-contain pt-4"
+            className="h-16 sm:h-14 md:h-20 w-auto object-contain pt-4"
           />
 
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-md text-foreground">
+        <nav className="hidden md:flex items-center gap-6 text-sm text-foreground">
           <Link href="/#home" className="hover:text-[#6BAE3A]">
             Home
           </Link>

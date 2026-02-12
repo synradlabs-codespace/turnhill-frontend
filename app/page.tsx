@@ -6,7 +6,7 @@ import { Showcase } from "@/components/showcase";
 import { Portfolio } from "@/components/portfolio";
 import { CTA } from "@/components/cta";
 import { SiteFooter } from "@/components/site-footer";
-import { BigFlexMarquee } from "@/components/brand-wall";
+import { BigFlexMarquee } from "@/components/big-flex-marquee";
 import { WhyUs } from "@/components/why-us";
 import { PassionateTeamSection } from "@/components/passionate-team-section";
 

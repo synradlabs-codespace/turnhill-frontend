@@ -1,0 +1,111 @@
+"use client";
+
+import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
+
+// Client data (logos in /public/brands, all .jpeg)
+const majorClients = [
+  { name: "Banjara Bites", logo: "/brands/banjara-bites.jpeg", alt: "Banjara Bites", },
+  { name: "Bun and Caffeine", logo: "/brands/bun-and-caffeine.jpeg", alt: "Bun and Caffeine", },
+  { name: "Chai Churi", logo: "/brands/chai-churi.jpeg", alt: "Chai Churi", },
+  { name: "Synrad Labs", logo: "/brands/synrad-labs.png", alt: "Synrad Labs" },
+  { name: "Clarendon Floors", logo: "/brands/clarendon-floors.jpeg", alt: "Clarendon Floors", },
+  { name: "Dynamic Range Architects", logo: "/brands/dynamic-range-architects.jpeg", alt: "Dynamic Range Architects", },
+  { name: "Hair Raiserz", logo: "/brands/hair-raiserz.jpeg", alt: "Hair Raiserz", },
+  { name: "JK", logo: "/brands/j-k.jpeg", alt: "JK", },
+  { name: "Jai Bhawani Group", logo: "/brands/jai-bhawani-group.jpeg", alt: "Jai Bhawani Group", },
+  { name: "Kleenjal Sipster", logo: "/brands/kleenjal-sipster.jpeg", alt: "Kleenjal Sipster", },
+  { name: "M Tree", logo: "/brands/m-tree.jpeg", alt: "M Tree", },
+  { name: "Mohali Citi Centre", logo: "/brands/mohali-citi-centre.jpeg", alt: "Mohali Citi Centre", },
+  { name: "Nadar Properties", logo: "/brands/nadar-properties.jpeg", alt: "Nadar Properties", },
+  { name: "Old Soul", logo: "/brands/old-soul.jpeg", alt: "Old Soul", },
+  { name: "Picos", logo: "/brands/picos.jpeg", alt: "Picos", },
+  { name: "Pink Sky Productions", logo: "/brands/pink-sky-production.jpeg", alt: "Pink Sky Productions", },
+  { name: "Sardar Ji", logo: "/brands/sardar-ji.jpeg", alt: "Sardar Ji", },
+  { name: "Social", logo: "/brands/social.jpeg", alt: "Social", },
+  { name: "Theka Coffee", logo: "/brands/theka-coffee.jpeg", alt: "Theka Coffee", },
+  { name: "Velvet Vista Accommodations", logo: "/brands/velvet-vista-accomodations.jpeg", alt: "Velvet Vista Accommodations", },
+  { name: "Wellboost Pharma", logo: "/brands/wellboost-pharma.jpeg", alt: "Wellboost Pharma", },
+];
+
+export function BigFlexMarquee() {
+  const [emblaRef] = useEmblaCarousel(
+    {
+      loop: true,
+      dragFree: true,
+      align: "start",
+    },
+    [
+      AutoScroll({
+        playOnInit: true,
+        stopOnInteraction: false,
+        stopOnMouseEnter: false,
+        stopOnFocusIn: false,
+        speed: 2.5,
+        startDelay: 0,
+      }),
+    ]
+  );
+
+  return (
+    <section
+      aria-label="Our clients"
+      className="py-16 bg-gradient-to-b from-background to-muted/20"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="mb-12 text-center">
+          <h2 className="text-pretty text-3xl font-semibold tracking-tight">
+            Trusted by Growing & Established Businesses
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            We work alongside founders, brands, and institutions across sectors,
+            supporting growth with structure, compliance, and strategic clarity.
+          </p>
+        </div>
+
+        <div className="overflow-hidden py-5" ref={emblaRef}>
+          <div className="flex touch-pan-y pointer-events-none">
+            {[...majorClients, ...majorClients, ...majorClients, ...majorClients].map(
+              (client, i) => (
+                <div
+                  key={`${client.name}-${i}`}
+                  className="
+                    flex-[0_0_auto] 
+                    min-w-0 
+                    px-8 
+                    flex 
+                    items-center 
+                    justify-center
+                  "
+                >
+                  <Image
+                    src={client.logo}
+                    alt={client.alt}
+                    width={200}
+                    height={80}
+                    className="
+                      h-20 
+                      w-auto 
+                      object-contain 
+                      hover:scale-110 
+                      transition-transform
+                    "
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-sm text-muted-foreground">
+            Building long-term partnerships across industries and markets
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+

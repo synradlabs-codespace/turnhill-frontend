@@ -50,12 +50,12 @@ const testimonials = [
         quote:
             "I had a great Experience with them. I truly appreciate their dedication and would higly recommend consultancy to anyone looking for reliable service and good work.",
     },
-    // {
-    //     name: "Sushmita Bhardwaj",
-    //     role: "",
-    //     quote:
-    //         "Best business experts in town. Starting my business was such an ease with their guidance. Highly recommended",
-    // },
+    {
+        name: "Sushmita Bhardwaj",
+        role: "",
+        quote:
+            "Best business experts in town. Starting my business was such an ease with their guidance. Highly recommended",
+    },
     {
         name: "Shipu Verma",
         role: "",
@@ -68,6 +68,18 @@ const testimonials = [
         quote:
             "Experts in startup expansion. Truly the best guides in Aerocity, Mohali. Highly recommended for anyone looking to scale their business😇😇",
     },
+    {
+        name: "Satyarth Sethi",
+        role: "",
+        quote:
+            "Excellent consultancy service! They provided clear guidance and support throughout the entire process. Highly recommended for anyone seeking reliable and professional consulting.",
+    },
+    {
+        name: "Anshul Arora",
+        role: "",
+        quote:
+            "I had a fantastic experience with this consultancy. They were incredibly helpful and guided me through every step of the process with clarity and professionalism. I highly recommend their services to anyone looking for expert advice and support.",
+    }
 ];
 
 

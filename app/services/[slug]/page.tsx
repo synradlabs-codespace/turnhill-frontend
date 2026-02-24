@@ -709,7 +709,7 @@ export default async function ServicePage(props: {
         <p className="text-sm tracking-wide text-muted-foreground uppercase">
           Service
         </p>
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight md:text-5xl">
+        <h1 className="mt-2 text-3xl text-left font-semibold tracking-tight md:text-5xl">
           {service.title}
         </h1>
         <p className="mt-4 max-w-3xl text-base text-muted-foreground">
@@ -729,7 +729,7 @@ export default async function ServicePage(props: {
           {service.offerings.map((step, i) => (
             <li key={i} className="rounded-xl border bg-card p-5">
               <div className="flex items-start gap-4">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#6BAE3A] text-white text-sm font-semibold">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#6BAE3A] text-white text-sm font-semibold">
                   {i + 1}
                 </span>
                 <div>
@@ -750,7 +750,7 @@ export default async function ServicePage(props: {
           {service.process.map((step, i) => (
             <li key={i} className="rounded-xl border bg-card p-5">
               <div className="flex items-start gap-4">
-                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#6BAE3A] text-white text-sm font-semibold">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#6BAE3A] text-white text-sm font-semibold">
                   {i + 1}
                 </span>
                 <div>

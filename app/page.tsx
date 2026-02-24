@@ -3,11 +3,10 @@ import { Hero } from "@/components/hero";
 import { TagMarquee } from "@/components/tag-marquee";
 import { Services } from "@/components/services";
 import { Showcase } from "@/components/showcase";
-import { Portfolio } from "@/components/portfolio";
+import { Insights } from "@/components/insights";
 import { CTA } from "@/components/cta";
 import { SiteFooter } from "@/components/site-footer";
 import { BigFlexMarquee } from "@/components/big-flex-marquee";
-import { WhyUs } from "@/components/why-us";
 import { PassionateTeamSection } from "@/components/passionate-team-section";
 
 export default function Page() {
@@ -15,22 +14,19 @@ export default function Page() {
     <main className="w-full">
       <SiteHeader />
 
-      <Hero />
+      <Insights />
 
+      <Hero />
 
       <TagMarquee />
 
-      <WhyUs />
+      <PassionateTeamSection />
 
       <BigFlexMarquee />
-
-      <PassionateTeamSection />
 
       <Services />
 
       <Showcase />
-
-      <Portfolio />
 
       <CTA />
 

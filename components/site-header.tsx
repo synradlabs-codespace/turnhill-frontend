@@ -83,11 +83,11 @@ export function SiteHeader() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm text-foreground">
-          <Link href="/#home" className="hover:text-[#6BAE3A]">
+          <Link href="/#insights" className="hover:text-[#6BAE3A]">
             Home
           </Link>
 
-          <Link href="/#whyus" className="hover:text-[#6BAE3A]">
+          <Link href="/why-us" className="hover:text-[#6BAE3A]">
             Why Turnhill
           </Link>
 
@@ -174,8 +174,8 @@ export function SiteHeader() {
             {/* Menu */}
             <div className="px-5 py-6 space-y-5 text-sm bg-background">
 
-              <Link href="/#home" className="block font-medium">Home</Link>
-              <Link href="/#whyus" className="block font-medium">Why Turnhill</Link>
+              <Link href="/#insights" className="block font-medium">Home</Link>
+              <Link href="/why-us" className="block font-medium">Why Turnhill</Link>
 
               {/* Mobile Services */}
               <button

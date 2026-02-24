@@ -26,9 +26,9 @@ export function SiteFooter() {
           </div>
 
           {/* Right: Contact & Social Media */}
-          <div className="flex flex-col sm:items-end gap-4 text-xs text-muted-foreground">
+          <div className="flex flex-col gap-4 text-xs text-muted-foreground w-full sm:w-auto sm:items-end sm:text-right">
             {/* Contact */}
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 sm:items-end">
               <span className="inline-flex items-center gap-1">
                 <span style={{ color: "#6BAE3A" }}><MdCall /></span>
                 <a href="tel:+917370000088" className="hover:text-foreground">
@@ -47,7 +47,7 @@ export function SiteFooter() {
             </div>
 
             {/* Social Media */}
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex items-center gap-3 mt-2 sm:justify-end">
               <a
                 href="https://wa.me/917370000088"
                 target="_blank"

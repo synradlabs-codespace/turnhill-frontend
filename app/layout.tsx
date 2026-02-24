@@ -3,6 +3,7 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner";
 
 
 export const metadata: Metadata = {
@@ -52,6 +53,7 @@ export default function RootLayout({
       >
         <main className="site-content">
           {children}
+          <Toaster />
         </main>
 
         <Analytics />

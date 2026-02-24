@@ -7,8 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useToast } from "@/hooks/use-toast"
+import { toast } from "sonner"
 import { MessageCircle } from "lucide-react"
 
 
@@ -22,7 +21,6 @@ type ContactPayload = {
   companySize?: string
   timeline?: string
   brief: string
-  consent: boolean
 }
 
 type BusinessContactFormProps = {
@@ -44,9 +42,10 @@ export function BusinessContactForm({
   projectPlaceholder = "Describe your goals, audience, scope, and success criteria...",
   buttonText = "Request Consultation",
 }: BusinessContactFormProps) {
-  const { toast } = useToast()
+
   const [loading, setLoading] = useState(false)
   const [resetKey, setResetKey] = useState(0)
+  const [consentChecked, setConsentChecked] = useState(false)
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -62,8 +61,7 @@ export function BusinessContactForm({
       website: String(data.get("website") || ""),
       companySize: String(data.get("companySize") || ""),
       timeline: String(data.get("timeline") || ""),
-      brief: String(data.get("brief") || ""),
-      consent: data.get("consent") === "on",
+      brief: String(data.get("brief") || "")
     }
 
     if (!payload.fullName || !payload.mobile || !payload.company || !payload.position || !payload.companyEmail || !payload.brief) {
@@ -77,27 +75,36 @@ export function BusinessContactForm({
 
     try {
       setLoading(true)
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
-      if (!res.ok) throw new Error("Failed to submit")
 
-      toast({
-        title: "Success!",
-        description: "Your inquiry has been received. The Turnhill team will get back to you shortly.",
-        duration: 5000,
+      const res = await fetch(process.env.NEXT_PUBLIC_FORMSPREE_URL!, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          Full_Name: payload.fullName,
+          Mobile: payload.mobile,
+          Company: payload.company,
+          Position: payload.position,
+          Company_Email: payload.companyEmail,
+          Project_Brief: payload.brief
+        }),
       })
+
+      const result = await res.json()
+
+      if (!res.ok || result.ok === false) {
+        throw new Error("Submission failed")
+      }
+
+      toast.success("Your inquiry has been received. The Turnhill team will get back to you shortly.")
 
       form.reset()
-      setResetKey(prev => prev + 1)
-    } catch (err: unknown) {
-      toast({
-        title: "Submission failed",
-        description: "Please try again or email us directly at relations@turnhill.com",
-        variant: "destructive",
-      })
+      setResetKey((prev) => prev + 1)
+
+    } catch (err) {
+      toast.error("Please try again or email us directly at relations@turnhill.in")
     } finally {
       setLoading(false)
     }
@@ -182,7 +189,14 @@ export function BusinessContactForm({
 
           {/* Consent */}
           <div className="flex items-start gap-3">
-            <input id="consent" name="consent" type="checkbox" className="mt-1 h-4 w-4 rounded border-gray-300" />
+            <input
+              id="consent"
+              name="consent"
+              type="checkbox"
+              checked={consentChecked}
+              onChange={(e) => setConsentChecked(e.target.checked)}
+              className="mt-1 h-4 w-4 rounded border-gray-300"
+            />
             <Label htmlFor="consent" className="text-sm text-muted-foreground">
               I consent to being contacted regarding my inquiry. Turnhill will not share my information with third parties.
             </Label>
@@ -197,8 +211,12 @@ export function BusinessContactForm({
 
             <Button
               type="submit"
-              disabled={loading}
-              className="min-w-28 bg-[#70AD47] text-white hover:bg-black hover:cursor-pointer"
+              disabled={loading || !consentChecked}
+              className={`min-w-28 text-white transition
+    ${loading || !consentChecked
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-[#70AD47] hover:bg-black hover:cursor-pointer"
+                }`}
             >
               {loading ? "Sending..." : buttonText}
             </Button>

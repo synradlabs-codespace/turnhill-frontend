@@ -31,6 +31,12 @@ export function SiteFooter() {
             <div className="flex flex-col gap-1 sm:items-end">
               <span className="inline-flex items-center gap-1">
                 <span style={{ color: "#6BAE3A" }}><MdCall /></span>
+                <a href="tel:+917890000088" className="hover:text-foreground">
+                  +91 78900 00088
+                </a>
+              </span>
+              <span className="inline-flex items-center gap-1">
+                <span style={{ color: "#6BAE3A" }}><MdCall /></span>
                 <a href="tel:+917370000088" className="hover:text-foreground">
                   +91 73700 00088
                 </a>

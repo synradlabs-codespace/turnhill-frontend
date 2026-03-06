@@ -13,24 +13,15 @@ export default function Page() {
   return (
     <main className="w-full">
       <SiteHeader />
-
       <Insights />
-
       <Hero />
-
       <TagMarquee />
-
       <PassionateTeamSection />
-
       <BigFlexMarquee />
-
       <Services />
-
       <Showcase />
-
       <CTA />
-
       <SiteFooter />
-    </main >
+    </main>
   );
 }

@@ -175,10 +175,3 @@
     }
   }
 }
-
-/* Hide horizontal scrollbar */
-
-html,
-body {
-  overflow-x: hidden;
-}

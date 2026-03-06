@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "sonner"
-import { MessageCircle } from "lucide-react"
+import { SiWhatsapp } from "react-icons/si"
 
 
 type ContactPayload = {
@@ -36,7 +36,7 @@ type BusinessContactFormProps = {
 export function BusinessContactForm({
   title = "Start Your Turnhill Consultation",
   description,
-  namePlaceholder = "Jane Doe",
+  namePlaceholder = "Full Name",
   emailPlaceholder = "you@company.com",
   companyPlaceholder = "Acme Inc.",
   projectPlaceholder = "Describe your goals, audience, scope, and success criteria...",
@@ -205,10 +205,6 @@ export function BusinessContactForm({
 
         <CardFooter className="flex flex-col gap-2">
           <div className="flex w-full items-center justify-between">
-            <p className="text-xs text-muted-foreground">
-              Response time: within 1–2 business days
-            </p>
-
             <Button
               type="submit"
               disabled={loading || !consentChecked}
@@ -231,7 +227,7 @@ export function BusinessContactForm({
               className="text-green-600 hover:underline underline-offset-4"
             >
               Contact us here
-              <MessageCircle className="inline-block ml-1 mb-0.5 h-4 w-4" />
+              <SiWhatsapp className="inline-block ml-1 mb-0.5 h-4 w-4 " />
             </a>
           </p>
         </CardFooter>

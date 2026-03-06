@@ -13,7 +13,7 @@ export default function LegalAndPrivacyPage() {
                 {/* Header */}
                 <header className="mb-10 md:mb-14">
                     <p className="text-sm text-muted-foreground">Legal</p>
-                    <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-balance mt-2">
+                    <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-balance mt-2 text-left">
                         Legal Notice & Privacy Policy
                     </h1>
                     <p className="mt-4 text-base text-muted-foreground max-w-3xl">
@@ -27,15 +27,13 @@ export default function LegalAndPrivacyPage() {
                     {/* Company Info */}
                     <section>
                         <h2 className="text-xl font-semibold">Turnhill International LLP</h2>
-                        <div className="mt-3 space-y-1 text-muted-foreground">
+                        <div className="mt-3 space-y-1 text-muted-foreground text-left">
                             <p><strong>Registered Address:</strong> DSS - 122, MCC-1, Aerocity, Mohali, India</p>
                             <p><strong>Contact:</strong> +91 7370000088</p>
                             <p>
                                 <strong>Email:</strong>{" "}
-                                <a href="mailto:turnhillgc@gmail.com" className="underline">turnhillgc@gmail.com</a>{" "}
-                                |{" "}
-                                <a href="mailto:relations@turnhill.in" className="underline">relations@turnhill.in</a>{" "}
-                                |{" "}
+                                <a href="mailto:relations@turnhill.in" className="underline">relations@turnhill.in</a>
+                                {" "}|{" "}
                                 <a href="mailto:managingpartner@turnhill.in" className="underline">managingpartner@turnhill.in</a>
                             </p>
                         </div>
@@ -291,7 +289,6 @@ export default function LegalAndPrivacyPage() {
                                 <p><strong>Turnhill International LLP</strong></p>
                                 <p>DSS - 122, MCC-1, Aerocity, Mohali, India</p>
                                 <p>📞 +91 7370000088</p>
-                                <p>📧 turnhillgc@gmail.com</p>
                                 <p>📧 relations@turnhill.in</p>
                                 <p>📧 managingpartner@turnhill.in</p>
                             </div>

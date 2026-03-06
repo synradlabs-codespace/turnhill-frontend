@@ -8,7 +8,7 @@ export function PassionateTeamSection() {
             <div className="grid gap-8 md:grid-cols-3 md:gap-12">
                 {/* Heading */}
                 <div>
-                    <h2 className="text-pretty text-2xl font-semibold tracking-tight">
+                    <h2 className="text-pretty text-2xl font-semibold tracking-tight text-left">
                         Expertise, Insight, and Strategic Partnership
                     </h2>
                     <p className="mt-3 text-sm text-muted-foreground leading-relaxed">

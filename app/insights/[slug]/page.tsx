@@ -35,13 +35,13 @@ export async function generateMetadata(props: {
       authors: [post.author],
       images: post.image
         ? [
-            {
-              url: post.image,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ]
+          {
+            url: post.image,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ]
         : undefined,
     },
     twitter: {
@@ -199,7 +199,7 @@ export default async function InsightPage(props: {
           <div>
             <h3 className="text-xs uppercase text-neutral-500 mb-2">Topics</h3>
             {post.categories.map((c, i) => (
-              <span key={c}>
+              <span key={c} className="text-left tracking-tighter">
                 {c.toUpperCase()}
                 {i < post.categories.length - 1 ? ", " : ""}
               </span>

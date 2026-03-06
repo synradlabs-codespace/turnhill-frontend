@@ -1,3 +1,4 @@
+import { FaqSection } from "@/components/faq-section";
 import Link from "next/link";
 
 type ServiceDetail = {
@@ -781,16 +782,7 @@ export default async function ServicePage(props: {
 
       <section className="py-8 md:py-12">
         <h2 className="text-xl font-semibold md:text-2xl">FAQs</h2>
-        <div className="mt-6 space-y-3">
-          {service.faqs.map((f, i) => (
-            <details key={i} className="group rounded-lg border bg-card p-4">
-              <summary className="cursor-pointer list-none font-medium">
-                <span className="mr-2 text-[#6BAE3A]">Q{i + 1}.</span> {f.q}
-              </summary>
-              <p className="mt-2 text-sm text-muted-foreground">{f.a}</p>
-            </details>
-          ))}
-        </div>
+        <FaqSection faqs={service.faqs} />
 
         {/* CTA */}
         <div className="mt-10 flex flex-wrap items-center gap-3">

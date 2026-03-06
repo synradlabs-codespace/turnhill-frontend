@@ -43,8 +43,8 @@ export function Hero() {
                 <NumberTicker value={2000} />+
               </div>
 
-              <p className="mt-2 text-xs text-muted-foreground">
-                Clients advised across compliance, finance, and strategy
+              <p className="mt-2 text-xs text-muted-foreground text-left">
+                Entrepreneurs Structured, Secured & Strategically Advised
               </p>
             </CardContent>
           </Card>
@@ -73,7 +73,7 @@ export function Hero() {
           </div>
 
           {/* Green stat card */}
-          <Card className="col-span-1 rounded-2xl bg-[#6BAE3A] text-white">
+          <Card className="col-span-1 rounded-2xl bg-[#6BAE3A] text-white text-left">
             <CardContent className="p-5">
               <div className="text-2xl font-semibold flex items-center">
                 <NumberTicker value={94} />%

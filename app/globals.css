@@ -146,7 +146,7 @@
 }
 
 .animate-scroll {
-  animation: scroll 30s linear infinite;
+  animation: scroll 35s linear infinite;
   will-change: transform;
 }
 

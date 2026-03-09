@@ -3,27 +3,16 @@
 import Image from "next/image";
 
 const majorClients = [
-  { name: "Banjara Bites", logo: "/brands/banjara-bites.jpeg", alt: "Banjara Bites" },
-  { name: "Bun and Caffeine", logo: "/brands/bun-and-caffeine.jpeg", alt: "Bun and Caffeine" },
-  { name: "Chai Churi", logo: "/brands/chai-churi.jpeg", alt: "Chai Churi" },
+
+  { name: "Chai Churi", logo: "/brands/chai-churi.jpg", alt: "Chai Churi" },
   { name: "Synrad Labs", logo: "/brands/synrad-labs.png", alt: "Synrad Labs" },
-  { name: "Clarendon Floors", logo: "/brands/clarendon-floors.jpeg", alt: "Clarendon Floors" },
-  { name: "Dynamic Range Architects", logo: "/brands/dynamic-range-architects.jpeg", alt: "Dynamic Range Architects" },
-  { name: "Hair Raiserz", logo: "/brands/hair-raiserz.jpeg", alt: "Hair Raiserz" },
-  { name: "JK", logo: "/brands/j-k.jpeg", alt: "JK" },
-  { name: "Jai Bhawani Group", logo: "/brands/jai-bhawani-group.jpeg", alt: "Jai Bhawani Group" },
-  { name: "Kleenjal Sipster", logo: "/brands/kleenjal-sipster.jpeg", alt: "Kleenjal Sipster" },
-  { name: "M Tree", logo: "/brands/m-tree.jpeg", alt: "M Tree" },
-  { name: "Mohali Citi Centre", logo: "/brands/mohali-citi-centre.jpeg", alt: "Mohali Citi Centre" },
-  { name: "Nadar Properties", logo: "/brands/nadar-properties.jpeg", alt: "Nadar Properties" },
-  { name: "Old Soul", logo: "/brands/old-soul.jpeg", alt: "Old Soul" },
-  { name: "Picos", logo: "/brands/picos.jpeg", alt: "Picos" },
-  { name: "Pink Sky Productions", logo: "/brands/pink-sky-production.jpeg", alt: "Pink Sky Productions" },
-  { name: "Sardar Ji", logo: "/brands/sardar-ji.jpeg", alt: "Sardar Ji" },
-  { name: "Social", logo: "/brands/social.jpeg", alt: "Social" },
-  { name: "Theka Coffee", logo: "/brands/theka-coffee.jpeg", alt: "Theka Coffee" },
-  { name: "Velvet Vista Accommodations", logo: "/brands/velvet-vista-accomodations.jpeg", alt: "Velvet Vista Accommodations" },
-  { name: "Wellboost Pharma", logo: "/brands/wellboost-pharma.jpeg", alt: "Wellboost Pharma" },
+  { name: "Kleenjal Sipster", logo: "/brands/kleenjal-sipster.jpg", alt: "Kleenjal Sipster" },
+  { name: "Nadar Properties", logo: "/brands/nadar-properties.jpg", alt: "Nadar Properties" },
+  { name: "Theka Coffee", logo: "/brands/theka-coffee.jpg", alt: "Theka Coffee" }, { name: "Picos", logo: "/brands/picos.jpg", alt: "Picos" },
+  { name: "Sardar Ji", logo: "/brands/sardar-ji.jpg", alt: "Sardar Ji" },
+  { name: "Social", logo: "/brands/social.jpg", alt: "Social" },
+
+  { name: "Swastik Finance", logo: "/brands/swastik-finance.jpg", alt: "Theka Coffee" },
 ];
 
 export function BigFlexMarquee() {
@@ -47,14 +36,14 @@ export function BigFlexMarquee() {
             {[...majorClients, ...majorClients].map((client, i) => (
               <div
                 key={`${client.name}-${i}`}
-                className="flex-shrink-0 px-8 w-[280px] flex items-center justify-center"
+                className="flex-shrink-0 px-4 flex items-center justify-center"
               >
                 <Image
                   src={client.logo}
                   alt={client.alt}
-                  width={280}
-                  height={100}
-                  className="h-16 sm:h-20 w-auto object-contain"
+                  width={220}
+                  height={140}
+                  className="h-20 sm:h-20 w-auto object-contain"
                 />
               </div>
             ))}

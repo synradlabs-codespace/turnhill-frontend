@@ -5,13 +5,15 @@ import Image from "next/image";
 const majorClients = [
 
   { name: "Chai Churi", logo: "/brands/chai-churi.jpg", alt: "Chai Churi" },
-  { name: "Synrad Labs", logo: "/brands/synrad-labs.png", alt: "Synrad Labs" },
+  { name: "Synrad Labs", logo: "/brands/synrad.png", alt: "Synrad Labs" },
+  // { name: "Synrad Labs", logo: "/brands/synrad-labs.jpg", alt: "Synrad Labs" },
+  // { name: "Synrad Labs", logo: "/brands/synrad-labs.png", alt: "Synrad Labs" },
   { name: "Kleenjal Sipster", logo: "/brands/kleenjal-sipster.jpg", alt: "Kleenjal Sipster" },
   { name: "Nadar Properties", logo: "/brands/nadar-properties.jpg", alt: "Nadar Properties" },
-  { name: "Theka Coffee", logo: "/brands/theka-coffee.jpg", alt: "Theka Coffee" }, { name: "Picos", logo: "/brands/picos.jpg", alt: "Picos" },
+  // { name: "Theka Coffee", logo: "/brands/theka-coffee.jpg", alt: "Theka Coffee" }, 
+  { name: "Picos", logo: "/brands/picos.jpeg", alt: "Picos" },
   { name: "Sardar Ji", logo: "/brands/sardar-ji.jpg", alt: "Sardar Ji" },
   { name: "Social", logo: "/brands/social.jpg", alt: "Social" },
-
   { name: "Swastik Finance", logo: "/brands/swastik-finance.jpg", alt: "Theka Coffee" },
 ];
 
@@ -36,14 +38,14 @@ export function BigFlexMarquee() {
             {[...majorClients, ...majorClients].map((client, i) => (
               <div
                 key={`${client.name}-${i}`}
-                className="flex-shrink-0 px-3 w-auto flex items-center justify-center"
+                className="flex-shrink-0 px-2 w-[260px] h-[160px] flex items-center justify-center"
               >
                 <Image
                   src={client.logo}
                   alt={client.alt}
-                  width={220}
-                  height={120}
-                  className="h-20 sm:h-20 w-auto object-contain"
+                  width={600}
+                  height={500}
+                  className="w-auto h-full object-contain"
                 />
               </div>
             ))}

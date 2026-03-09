@@ -73,48 +73,21 @@ export default function WhyTurnhillPage() {
                     </div>
                 </div>
 
-                {/* Row 2 — Turn */}
-                <div className="grid gap-8 md:grid-cols-3 items-center border-t pt-16">
-                    <div className="md:col-span-1">
-                        <div className="relative w-40 h-40 overflow-hidden rounded-xl">
-                            <Image
-                                src="/turn.png"
-                                alt="Turn"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                    </div>
-                    <div className="md:col-span-2 space-y-3">
-                        <p className="text-xs uppercase tracking-[0.2em] text-[#6BAE3A] font-semibold">01</p>
-                        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Turn</h2>
-                        <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
+                {/* Turn & Hill — side by side cards */}
+                <div className="grid gap-6 md:grid-cols-2 border-t pt-16">
+                    <div className="rounded-xl border bg-card p-6 space-y-3">
+                        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#6BAE3A]">Turn</h2>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                             Navigating critical business decisions with precision and care. Every strategic turn requires thoughtful consideration, expert guidance, and clear vision to ensure you're moving in the right direction.
                         </p>
                     </div>
-                </div>
-
-                {/* Row 3 — Hill */}
-                <div className="grid gap-8 md:grid-cols-3 items-center border-t pt-16">
-                    <div className="md:col-span-1">
-                        <div className="relative w-40 h-40 overflow-hidden rounded-xl">
-                            <Image
-                                src="/hill-orange.png"
-                                alt="Hill"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                    </div>
-                    <div className="md:col-span-2 space-y-3">
-                        <p className="text-xs uppercase tracking-[0.2em] text-[#6BAE3A] font-semibold">02</p>
-                        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">Hill</h2>
-                        <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
+                    <div className="rounded-xl border bg-card p-6 space-y-3">
+                        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#6BAE3A]">Hill</h2>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
                             Building steady, sustainable growth towards long-term success. Like climbing a hill, business excellence requires consistent effort, strategic planning, and unwavering commitment to reaching new heights.
                         </p>
                     </div>
                 </div>
-
                 {/* Why Choose Us */}
                 <div className="border-t pt-16">
                     <div className="mb-10">

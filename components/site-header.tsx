@@ -4,7 +4,6 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "./ui/button"
 
@@ -21,7 +20,7 @@ const services = [
 
 export function SiteHeader() {
   const [expanded, setExpanded] = useState(false)
-  const [hoveredService, setHoveredService] = useState(services[0])
+  const [hoveredService, setHoveredService] = useState<typeof services[0] | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const pathname = usePathname()
@@ -34,19 +33,13 @@ export function SiteHeader() {
 
   return (
     <header className="border-b bg-background/70 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 h-14 relative">
+      <div className="mx-auto flex max-w-6xl items-center justify-between pt-2 px-4 sm:px-6 h-14 relative">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center" aria-label="Turnhill International Home">
-          <span className="sr-only">Turnhill International</span>
-          <Image
-            src="/turnhill-full-logo.svg"
-            alt="Turnhill International"
-            width={420}
-            height={150}
-            priority
-            className="h-16 sm:h-14 md:h-20 w-auto object-contain pt-4"
-          />
+        {/* Logo — Timeburner text */}
+        <Link href="/" aria-label="Turnhill International Home">
+          <span className="font-[family-name:var(--font-timeburner)] text-2xl md:text-4xl font-bold select-none">
+            <span className="text-black">Turn</span><span className="text-[#6BAE3A]">hill</span>
+          </span>
         </Link>
 
         {/* Desktop Nav */}
@@ -55,7 +48,6 @@ export function SiteHeader() {
           <Link href="/why-us" className="hover:text-[#6BAE3A]">Why Turnhill</Link>
           <a href="/about-us.pdf" download className="hover:text-[#6BAE3A] cursor-pointer">About Us</a>
 
-          {/* Services trigger */}
           <button
             type="button"
             className="flex items-center gap-1 hover:text-[#6BAE3A] cursor-pointer"
@@ -73,7 +65,6 @@ export function SiteHeader() {
           <Link href="/contact" className="hover:text-[#6BAE3A]">Contact</Link>
         </nav>
 
-        {/* Mobile Hamburger */}
         <Button
           onClick={() => setMobileOpen(true)}
           variant="outline"
@@ -94,7 +85,10 @@ export function SiteHeader() {
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.2 }}
             className="bg-white border-t border-gray-100 shadow-xl text-sm"
-            onMouseLeave={() => setExpanded(false)}
+            onMouseLeave={() => {
+              setExpanded(false)
+              setHoveredService(null)
+            }}
           >
             <div className="mx-auto max-w-6xl px-4 sm:px-6 flex">
 
@@ -104,27 +98,32 @@ export function SiteHeader() {
                   Our Services
                 </p>
                 <AnimatePresence mode="wait">
-                  <motion.div
-                    key={hoveredService.category}
-                    initial={{ opacity: 0, x: -6 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 6 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <p className="text-base font-semibold text-gray-900 leading-snug">
-                      {hoveredService.category}
-                    </p>
-                    <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
-                      {hoveredService.desc}
-                    </p>
-                    <Link
-                      href={hoveredService.href}
-                      onClick={() => setExpanded(false)}
-                      className="inline-flex items-center gap-1 mt-4 text-xs text-[#6BAE3A] font-medium hover:underline"
+                  {hoveredService ? (
+                    <motion.div
+                      key={hoveredService.category}
+                      initial={{ opacity: 0, x: -6 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 6 }}
+                      transition={{ duration: 0.15 }}
                     >
-                      Explore <ArrowUpRight size={12} />
-                    </Link>
-                  </motion.div>
+                      <p className="text-base font-semibold text-gray-900 leading-snug">
+                        {hoveredService.category}
+                      </p>
+                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                        {hoveredService.desc}
+                      </p>
+                    </motion.div>
+                  ) : (
+                    <motion.p
+                      key="placeholder"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="text-xs text-muted-foreground"
+                    >
+                      Hover a service to learn more.
+                    </motion.p>
+                  )}
                 </AnimatePresence>
               </div>
 
@@ -136,29 +135,27 @@ export function SiteHeader() {
                     href={s.href}
                     onClick={() => setExpanded(false)}
                     onMouseEnter={() => setHoveredService(s)}
-                    className={`group flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors duration-150 ${hoveredService.category === s.category
-                        ? "bg-[#6BAE3A]/8 text-[#6BAE3A]"
-                        : "hover:bg-gray-50 text-gray-700"
+                    onMouseLeave={() => setHoveredService(null)}
+                    className={`group flex items-center justify-between px-3 py-2.5 rounded-lg transition-colors duration-150 ${hoveredService?.category === s.category
+                      ? "bg-[#6BAE3A]/10 text-[#6BAE3A]"
+                      : "text-gray-700 hover:bg-gray-50"
                       }`}
                   >
                     <span className="font-medium text-sm">{s.category}</span>
                     <ArrowUpRight
                       size={13}
-                      className={`transition-opacity duration-150 ${hoveredService.category === s.category ? "opacity-100 text-[#6BAE3A]" : "opacity-0"
+                      className={`transition-opacity duration-150 ${hoveredService?.category === s.category ? "opacity-100" : "opacity-0"
                         }`}
                     />
                   </Link>
                 ))}
               </div>
-
             </div>
 
             {/* Bottom bar */}
             <div className="border-t border-gray-100 bg-gray-50/60">
               <div className="mx-auto max-w-6xl px-4 sm:px-6 py-3 flex items-center justify-between">
-                <p className="text-xs text-muted-foreground">
-                  Not sure where to start?
-                </p>
+                <p className="text-xs text-muted-foreground">Not sure where to start?</p>
                 <Link
                   href="/contact"
                   onClick={() => setExpanded(false)}
@@ -183,13 +180,10 @@ export function SiteHeader() {
             className="md:hidden fixed inset-0 z-[60] bg-white"
           >
             <div className="flex items-center justify-between px-4 h-16 border-b">
-              <Image
-                src="/turnhill-full-logo.svg"
-                alt="Turnhill International"
-                width={220}
-                height={80}
-                className="h-10 w-auto object-contain"
-              />
+              {/* Mobile logo also uses Timeburner */}
+              <span className="font-[family-name:var(--font-timeburner)] text-2xl tracking-wide select-none">
+                <span className="text-black">Turn</span><span className="text-[#6BAE3A]">hill</span>
+              </span>
               <button onClick={() => setMobileOpen(false)}><X size={26} /></button>
             </div>
 

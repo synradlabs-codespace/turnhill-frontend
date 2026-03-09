@@ -76,13 +76,17 @@ export default function WhyTurnhillPage() {
                 {/* Turn & Hill — side by side cards */}
                 <div className="grid gap-6 md:grid-cols-2 border-t pt-16">
                     <div className="rounded-xl border bg-card p-6 space-y-3">
-                        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#6BAE3A]">Turn</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold  text-black font-[family-name:var(--font-timeburner)]">
+                            Turn
+                        </h2>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                             Navigating critical business decisions with precision and care. Every strategic turn requires thoughtful consideration, expert guidance, and clear vision to ensure you're moving in the right direction.
                         </p>
                     </div>
                     <div className="rounded-xl border bg-card p-6 space-y-3">
-                        <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-[#6BAE3A]">Hill</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold  text-[#6BAE3A] font-[family-name:var(--font-timeburner)]">
+                            hill
+                        </h2>
                         <p className="text-sm text-muted-foreground leading-relaxed">
                             Building steady, sustainable growth towards long-term success. Like climbing a hill, business excellence requires consistent effort, strategic planning, and unwavering commitment to reaching new heights.
                         </p>
@@ -99,7 +103,7 @@ export default function WhyTurnhillPage() {
                         {values.map((v, i) => (
                             <div key={i} className="flex gap-4 items-start rounded-xl border bg-card p-5">
                                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#6BAE3A] text-white text-xs font-semibold">
-                                    {String(i + 1).padStart(2, "0")}
+                                    {String(i + 1)}
                                 </span>
                                 <div>
                                     <h3 className="font-medium">{v.title}</h3>

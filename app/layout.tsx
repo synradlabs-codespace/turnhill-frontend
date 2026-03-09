@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import localFont from "next/font/local"
 
 
 export const metadata: Metadata = {
@@ -39,6 +40,21 @@ export const metadata: Metadata = {
   },
 };
 
+const timeburner = localFont({
+  src: [
+    {
+      path: "../public/fonts/timeburnernormal.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/timeburnerbold.ttf",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+  variable: "--font-timeburner",
+})
 
 
 export default function RootLayout({
@@ -49,7 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} ${timeburner.variable} antialiased`}
       >
         <main className="site-content">
           {children}

@@ -181,7 +181,7 @@ export function SiteHeader() {
           >
             <div className="flex items-center justify-between px-4 h-16 border-b">
               {/* Mobile logo also uses Timeburner */}
-              <span className="font-[family-name:var(--font-timeburner)] text-2xl tracking-wide select-none">
+              <span className="font-[family-name:var(--font-timeburner)] text-2xl font-bold select-none">
                 <span className="text-black">Turn</span><span className="text-[#6BAE3A]">hill</span>
               </span>
               <button onClick={() => setMobileOpen(false)}><X size={26} /></button>

@@ -36,13 +36,13 @@ export function BigFlexMarquee() {
             {[...majorClients, ...majorClients].map((client, i) => (
               <div
                 key={`${client.name}-${i}`}
-                className="flex-shrink-0 px-4 flex items-center justify-center"
+                className="flex-shrink-0 px-3 w-auto flex items-center justify-center"
               >
                 <Image
                   src={client.logo}
                   alt={client.alt}
                   width={220}
-                  height={140}
+                  height={120}
                   className="h-20 sm:h-20 w-auto object-contain"
                 />
               </div>

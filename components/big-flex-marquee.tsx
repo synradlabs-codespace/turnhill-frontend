@@ -6,15 +6,13 @@ const majorClients = [
 
   { name: "Chai Churi", logo: "/brands/chai-churi.jpg", alt: "Chai Churi" },
   { name: "Synrad Labs", logo: "/brands/synrad.png", alt: "Synrad Labs" },
-  // { name: "Synrad Labs", logo: "/brands/synrad-labs.jpg", alt: "Synrad Labs" },
-  // { name: "Synrad Labs", logo: "/brands/synrad-labs.png", alt: "Synrad Labs" },
   { name: "Kleenjal Sipster", logo: "/brands/kleenjal-sipster.jpg", alt: "Kleenjal Sipster" },
   { name: "Nadar Properties", logo: "/brands/nadar-properties.jpg", alt: "Nadar Properties" },
-  // { name: "Theka Coffee", logo: "/brands/theka-coffee.jpg", alt: "Theka Coffee" }, 
   { name: "Picos", logo: "/brands/picos.jpeg", alt: "Picos" },
   { name: "Sardar Ji", logo: "/brands/sardar-ji.jpg", alt: "Sardar Ji" },
-  { name: "Social", logo: "/brands/social.jpg", alt: "Social" },
+  { name: "Social", logo: "/brands/social.jpeg", alt: "Social" },
   { name: "Swastik Finance", logo: "/brands/swastik-finance.jpg", alt: "Theka Coffee" },
+  { name: "Paggnation", logo: "/brands/paggnation.jpeg", alt: "Paggnation" },
 ];
 
 export function BigFlexMarquee() {

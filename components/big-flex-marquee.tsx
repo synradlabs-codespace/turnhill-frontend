@@ -42,18 +42,18 @@ export function BigFlexMarquee() {
         </div>
 
         {/* Simple Marquee */}
-        <div className="overflow-hidden">
-          <div className="flex w-max animate-scroll items-center">
+        <div className="overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="flex animate-scroll items-center w-max">
             {[...majorClients, ...majorClients].map((client, i) => (
               <div
                 key={`${client.name}-${i}`}
-                className="flex-shrink-0 px-12"
+                className="flex-shrink-0 px-8 w-[280px] flex items-center justify-center"
               >
                 <Image
                   src={client.logo}
                   alt={client.alt}
-                  width={180}
-                  height={80}
+                  width={280}
+                  height={100}
                   className="h-16 sm:h-20 w-auto object-contain"
                 />
               </div>

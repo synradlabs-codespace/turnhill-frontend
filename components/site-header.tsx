@@ -8,14 +8,14 @@ import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "./ui/button"
 
 const services = [
-  { category: "Start Your Business", href: "/services/start-your-business", desc: "Incorporation, structuring & launch" },
-  { category: "Protect Your Business", href: "/services/protect-your-business", desc: "IP, legal shields & risk management" },
-  { category: "Manage Your Business", href: "/services/manage-your-business", desc: "Governance, ops & compliance" },
-  { category: "Registration & Licenses", href: "/services/registrations-licenses", desc: "All statutory registrations" },
-  { category: "Financial Management", href: "/services/financial-management", desc: "Accounting, audits & reporting" },
-  { category: "Business Growth", href: "/services/business-growth", desc: "Strategy, funding & scale-up" },
-  { category: "Franchise Advisory", href: "/services/franchise-advisory", desc: "Expand through franchising" },
-  { category: "International Business", href: "/services/international-business", desc: "Cross-border setup & advisory" },
+  { category: "Start Your Business", href: "/services/start-your-business", desc: "Private Limited Company\nOne Person Company\nLLP\nPartnership\nPublic Limited Company\nNGO / Section 8 Company\nProprietorship" },
+  { category: "Protect Your Business", href: "/services/protect-your-business", desc: "Trademark Registration\nReply Queries\nRenew Your Trademark\nName Availability\nContracts & Agreements\nProject Feasibility" },
+  { category: "Manage Your Business", href: "/services/manage-your-business", desc: "Pvt Ltd ROC Compliances\nPublic Ltd Compliance\nLLP ROC Compliances\nGST Compliances\nTDS Compliances\nBooks Finalisation\nIncome Tax Returns\nClosure of Company" },
+  { category: "Registration & Licenses", href: "/services/registrations-licenses", desc: "GST Registration\nUdyam Registration\nStartup India DPIIT\nFSSAI Registration\nShop & Establishment\nISO Certification\nImport Export Code\nTAN" },
+  { category: "Financial Management", href: "/services/financial-management", desc: "Bookkeeping\nSupervision Accounts\nFinancial Dashboards\nCash Flow Analysis\nWorking Capital Analysis\nCost Control Advisory\nTax Planning\nAudit Support" },
+  { category: "Business Growth", href: "/services/business-growth", desc: "Business Structuring\nFinancial Modelling\nDue Diligence\nFund Raising / Loans\nValuation\nVirtual CFO Services\nInternational Expansion" },
+  { category: "Franchise Advisory", href: "/services/franchise-advisory", desc: "Franchise Modelling\nInvestor Agreements\nCompliances\nTax Structuring\nInvestor Relations\nIP Protection\nMaster Franchising" },
+  { category: "International Business", href: "/services/international-business", desc: "Company Incorporation\nBookkeeping\nAccounting Support\nCompliance & Filings\nTax & Advisory Support\nInternational Business Management" },
 ]
 
 export function SiteHeader() {
@@ -109,7 +109,7 @@ export function SiteHeader() {
                       <p className="text-base font-semibold text-gray-900 leading-snug">
                         {hoveredService.category}
                       </p>
-                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                      <p className="mt-2 text-xs text-muted-foreground leading-relaxed whitespace-pre-line">
                         {hoveredService.desc}
                       </p>
                     </motion.div>

@@ -1,8 +1,8 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useEffect } from "react"
-import { usePathname } from "next/navigation"
+import Image from "next/image"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "./ui/button"
@@ -23,23 +23,21 @@ export function SiteHeader() {
   const [hoveredService, setHoveredService] = useState<typeof services[0] | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const pathname = usePathname()
-
-  useEffect(() => {
-    setExpanded(false)
-    setMobileOpen(false)
-    setMobileServicesOpen(false)
-  }, [pathname])
 
   return (
     <header className="border-b bg-background/70 sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex max-w-6xl items-center justify-between pt-2 px-4 sm:px-6 h-14 relative">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 md:h-14 md:pt-2 relative">
 
-        {/* Logo — Timeburner text */}
-        <Link href="/" aria-label="Turnhill International Home">
-          <span className="font-[family-name:var(--font-timeburner)] text-2xl md:text-4xl font-bold select-none">
-            <span className="text-black">Turn</span><span className="text-[#6BAE3A]">hill</span>
-          </span>
+        {/* Logo */}
+        <Link href="/" aria-label="Turnhill International Home" className="flex items-center">
+          <Image
+            src="/turnhill-full-logo-cropped.svg"
+            alt="Turnhill"
+            width={13650}
+            height={3675}
+            priority
+            className="h-7 w-auto md:h-8"
+          />
         </Link>
 
         {/* Desktop Nav */}
@@ -180,16 +178,21 @@ export function SiteHeader() {
             className="md:hidden fixed inset-0 z-[60] bg-white"
           >
             <div className="flex items-center justify-between px-4 h-16 border-b">
-              {/* Mobile logo also uses Timeburner */}
-              <span className="font-[family-name:var(--font-timeburner)] text-2xl font-bold select-none">
-                <span className="text-black">Turn</span><span className="text-[#6BAE3A]">hill</span>
-              </span>
+              {/* Mobile logo */}
+              <Image
+                src="/turnhill-full-logo-cropped.svg"
+                alt="Turnhill"
+                width={13650}
+                height={3675}
+                priority
+                className="h-7 w-auto"
+              />
               <button onClick={() => setMobileOpen(false)}><X size={26} /></button>
             </div>
 
             <div className="px-5 py-6 space-y-5 text-sm bg-background">
-              <Link href="/#insights" className="block font-medium">Home</Link>
-              <Link href="/why-us" className="block font-medium">Why Turnhill</Link>
+              <Link href="/#insights" className="block font-medium" onClick={() => setMobileOpen(false)}>Home</Link>
+              <Link href="/why-us" className="block font-medium" onClick={() => setMobileOpen(false)}>Why Turnhill</Link>
               <a href="/about-us.pdf" download className="block font-medium" onClick={() => setMobileOpen(false)}>
                 About Us
               </a>
@@ -226,8 +229,8 @@ export function SiteHeader() {
                 )}
               </AnimatePresence>
 
-              <Link href="/insights" className="block font-medium">Insights</Link>
-              <Link href="/contact" className="block font-medium">Contact</Link>
+              <Link href="/insights" className="block font-medium" onClick={() => setMobileOpen(false)}>Insights</Link>
+              <Link href="/contact" className="block font-medium" onClick={() => setMobileOpen(false)}>Contact</Link>
             </div>
           </motion.div>
         )}

@@ -74,8 +74,9 @@ export async function POST(req: Request) {
         headers: { "Content-Type": "application/json" },
       });
 
-    } catch (sheetError: any) {
-      console.error("[API] Google Sheet Error:", sheetError?.message || sheetError);
+    } catch (sheetError: unknown) {
+      const message = sheetError instanceof Error ? sheetError.message : sheetError;
+      console.error("[API] Google Sheet Error:", message);
       // Fallback: still success to user, but logged error
       return new Response(JSON.stringify({ ok: true, status: "sheet_error" }), {
         status: 200,

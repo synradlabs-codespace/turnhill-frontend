@@ -80,7 +80,7 @@ export default function WhyTurnhillPage() {
                             Turn
                         </h2>
                         <p className="text-sm text-muted-foreground leading-relaxed">
-                            Navigating critical business decisions with precision and care. Every strategic turn requires thoughtful consideration, expert guidance, and clear vision to ensure you're moving in the right direction.
+                            Navigating critical business decisions with precision and care. Every strategic turn requires thoughtful consideration, expert guidance, and clear vision to ensure you&apos;re moving in the right direction.
                         </p>
                     </div>
                     <div className="rounded-xl border bg-card p-6 space-y-3">

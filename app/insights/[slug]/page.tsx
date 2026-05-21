@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, User } from "lucide-react";
 import {
@@ -176,9 +177,12 @@ export default async function InsightPage(props: {
 
       {/* Image */}
       <div className="mb-12 overflow-hidden rounded-lg">
-        <img
+        <Image
           src={post.image || "/placeholder.svg"}
           alt={post.title}
+          width={1200}
+          height={675}
+          unoptimized
           className="w-full object-cover"
         />
       </div>

@@ -103,7 +103,7 @@ export function BusinessContactForm({
       form.reset()
       setResetKey((prev) => prev + 1)
 
-    } catch (err) {
+    } catch {
       toast.error("Please try again or email us directly at relations@turnhill.in")
     } finally {
       setLoading(false)

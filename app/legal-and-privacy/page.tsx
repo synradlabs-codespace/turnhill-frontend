@@ -47,7 +47,7 @@ export default function LegalAndPrivacyPage() {
                             <h3 className="font-medium">1. Introduction</h3>
                             <p className="mt-2">
                                 This website and all associated services are owned and operated by{" "}
-                                <strong> Turnhill International LLP</strong> ("Turnhill", "we", "our", "us").
+                                <strong> Turnhill International LLP</strong> (&quot;Turnhill&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;).
                                 By accessing, browsing, or using this website and our services, you agree
                                 to comply with and be bound by the terms of this Legal Notice.
                             </p>

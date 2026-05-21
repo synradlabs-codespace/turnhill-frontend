@@ -1,4 +1,5 @@
 import { getAllSanityInsights, type SanityInsight } from "@/lib/sanity.insights";
+import Image from "next/image";
 import Link from "next/link";
 
 // Revalidate every 60 seconds
@@ -25,9 +26,12 @@ function InsightCard({ insight }: { insight: SanityInsight }) {
   return (
     <article className="group overflow-hidden rounded-xl border border-neutral-200 bg-white">
       <div className="aspect-[16/9] w-full overflow-hidden">
-        <img
+        <Image
           src={insight.image || "/placeholder.svg"}
           alt={insight.title}
+          width={1200}
+          height={675}
+          unoptimized
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
         />
       </div>

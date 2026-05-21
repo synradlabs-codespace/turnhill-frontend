@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { BusinessContactForm } from "@/components/business-contact-form"
 import { Button } from "@/components/ui/button"
 
@@ -35,7 +36,7 @@ export default function ContactPage() {
               </p>
               <div className="mt-4">
                 <Button asChild variant="outline">
-                  <a href="/">Back to home</a>
+                  <Link href="/">Back to home</Link>
                 </Button>
               </div>
             </div>

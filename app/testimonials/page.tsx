@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { NumberTicker } from "@/components/number-ticker";
 import { BusinessContactForm } from "@/components/business-contact-form";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 
 const testimonials = [
@@ -94,7 +95,7 @@ export default function TestimonialsPage() {
                         Hear From Our Clients
                     </h1>
                     <p className="mt-3 text-base text-muted-foreground max-w-2xl mx-auto">
-                        Turnhill partners with founders and enterprises across sectors. Here's what some of our clients have to say about working with us.
+                        Turnhill partners with founders and enterprises across sectors. Here&apos;s what some of our clients have to say about working with us.
                     </p>
                 </header>
 
@@ -165,7 +166,7 @@ export default function TestimonialsPage() {
                             </p>
                             <div className="mt-4">
                                 <Button asChild variant="outline">
-                                    <a href="/">Back to home</a>
+                                    <Link href="/">Back to home</Link>
                                 </Button>
                             </div>
                         </div>
